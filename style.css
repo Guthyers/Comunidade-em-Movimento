@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600&display=swap");
+
+:root {
+  --primary: #2e7d32; /* Verde */
+  --secondary: #1565c0; /* Azul */
+  --accent: #f9a825; /* Amarelo/Laranja */
+  --bg-card: #ffffff;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  /* Fundo com imagem e gradiente escuro */
+  background-image:
+    linear-gradient(rgba(0, 30, 0, 0.85), rgba(0, 20, 0, 0.95)),
+    url("fundo-conscientizacao.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 20px;
+  line-height: 1.6;
+  color: #dddddd; /* Texto geral em cinza claro para não ser branco puro */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 40px;
+  max-width: 700px;
+}
+
+/* APENAS o título em branco */
+h1 {
+  color: #ffffff;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+header p {
+  color: #bbbbbb; /* Cinza médio para diferenciar do título */
+  margin: 0 auto;
+}
+
+main {
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* Estilo dos Cards */
+.card {
+  background: var(--bg-card);
+  color: #333333; /* Texto interno do card sempre escuro */
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  border-left: 10px solid #ccc;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.01);
+}
+
+/* Cores das bordas dos cards */
+.praca {
+  border-left-color: var(--primary);
+}
+.caminhodromo {
+  border-left-color: var(--secondary);
+}
+.pracinha {
+  border-left-color: var(--accent);
+}
+
+.card h3 {
+  margin: 0;
+  font-size: 1.4rem;
+  color: #222;
+}
+
+.subtitulo {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+/* Container do Mapa Responsivo */
+.map-container {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* Proporção 16:9 */
+}
+
+.map-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 8px;
+}
+
+/* Ajustes para Celular */
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+  h1 {
+    font-size: 1.8rem;
+  }
+  .card {
+    padding: 15px;
+  }
+}
